@@ -16,22 +16,32 @@ const argv = program.opts();
 // TODO: рефакторить
 async function invokeAction({ action, id, name, email, phone }) {
   switch (action) {
-    case 'list':
-      // ...
-          const contacts = await listContacts();
-          console.table(contacts);
+    case 'list':      
+      const contacts = await listContacts();
+      console.table(contacts);
       break;
 
     case 'get':
-      // ... id
+      const contactById = await getContactById(id);
+      if (contactById) {
+        console.log(contactById)
+        return
+      }
+      console.log("Contact not found")
       break;
 
     case 'add':
-      // ... name email phone
+      const contact = await addContact(name, email, phone);
+      console.log(contact);
       break;
 
     case 'remove':
-      // ... id
+      const deleteContact = await removeContact(id);
+      if (deleteContact) {
+        console.log(deleteContact)
+        return
+      }
+      console.log("Contact not found")
       break;
 
     default:
