@@ -16,8 +16,7 @@ const readContent = async () => {
 
 // const contactsPath = ;
 // TODO: задокументировать каждую функцию
-async function listContacts() {
-  // ...твой код
+async function listContacts() {  
     return await readContent();
 }
 
