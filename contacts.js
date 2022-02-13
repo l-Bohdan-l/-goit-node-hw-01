@@ -8,14 +8,6 @@ const readContent = async () => {
     return result
 }
 
-// contacts.js
-
-/*
- * Раскомментируй и запиши значение
-*/
-
-// const contactsPath = ;
-// TODO: задокументировать каждую функцию
 async function listContacts() {  
     return await readContent();
 }
